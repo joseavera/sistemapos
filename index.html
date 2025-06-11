@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase POS System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Punto de Venta</h1>
+        <div id="auth-status"></div>
+    </header>
+
+    <main>
+        <section id="auth-section">
+            <h2>Autenticación</h2>
+
+            <div id="auth-forms">
+                <div class="auth-form">
+                    <h3>Registrarse</h3>
+                    <input type="email" id="signup-email" placeholder="Email">
+                    <input type="password" id="signup-password" placeholder="Contraseña">
+                    <button id="btn-signup">Registrar</button>
+                    <p id="signup-error" class="error-message"></p>
+                </div>
+
+                <div class="auth-form">
+                    <h3>Iniciar Sesión</h3>
+                    <input type="email" id="login-email" placeholder="Email">
+                    <input type="password" id="login-password" placeholder="Contraseña">
+                    <button id="btn-login">Iniciar Sesión</button>
+                    <p id="login-error" class="error-message"></p>
+                </div>
+            </div>
+            <button id="btn-logout" class="hidden">Cerrar Sesión</button>
+        </section>
+
+        <hr>
+
+        <section id="pos-section" class="hidden">
+            <h2>Punto de Venta</h2>
+
+            <div class="pos-container">
+                <div class="product-list">
+                    <h3>Productos Disponibles</h3>
+                    <div id="products-container">
+                        <p>Cargando productos...</p>
+                    </div>
+                </div>
+
+                <div class="cart-section">
+                    <h3>Carrito de Compras</h3>
+                    <div id="cart-items">
+                        <p>El carrito está vacío.</p>
+                    </div>
+                    <div class="cart-summary">
+                        <strong>Total: <span id="cart-total">$0.00</span></strong>
+                    </div>
+                    <button id="btn-checkout" disabled>Finalizar Venta</button>
+                    <p id="checkout-message" class="error-message"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
